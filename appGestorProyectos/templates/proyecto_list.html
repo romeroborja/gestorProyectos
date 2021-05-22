@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block styles %}
+<link href="{% static 'css/list.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Lista de proyectos</h1>
+    </div>
+</header>
+{% endblock %}
+{% block main %}
+<main>
+    <div id="botnnew">
+        <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning bti" href="{% url 'proyecto_form' %}">Nuevo proyecto</a>
+    </div>
+    <div class="table-users">
+        <div class="header">Proyectos</div>
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha de inicio</th>
+                    <th>Fecha de entrega</th>
+                    <th>Responsable</th>
+                    <th>Más acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proyecto in proyecto_list %}
+                <tr>
+                    <td>{{ proyecto.nombre }}</td>
+                    <td>{{ proyecto.fecha_inicio }}</td>
+                    <td>{{ proyecto.fecha_fin }}</td>
+                    <td>{{ proyecto.responsable }}</td>
+                    <td style="text-align: center;"><a class="btn btn-warning" href="{% url 'proyecto' proyecto.id %}">Mostrar más</a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>Aún no existe ningún proyecto</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+    outline: none;
+}
+
+#ebody {
+    margin: 0;
+    padding: 0;
+    background: #DDD;
+    font-size: 16px;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+img {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    margin-left: 80px;
+}
+
+#login-box {
+    position: relative;
+    margin: 5% auto;
+    width: 350px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 350px;
+    height: 380px;
+}
+
+#eh1 {
+    font-weight: 300;
+    font-size: 28px;
+    padding-top: 25px;
+}
+
+.text {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 7px;
+    width: 280px;
+    height: 32px;
+    border: none;
+    border: 1px solid #AAA;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.text:focus {
+    border-bottom: 2px solid #16a085;
+    color: #16a085;
+    transition: 0.2s ease;
+}
+
+
+.posbot {
+    margin-top: 155px;
+}
+
+#boton_atras{
+background-color: #dcdcdc;
+padding-bottom: 20px;
+}
+
+#boton_atras a{
+margin-left: 40px;
+}
+
+#editar {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin: 0px 25px 0px 9px;
+}
+
+#empedit {
+    margin-bottom: 50px;
+    display: flex;
+}

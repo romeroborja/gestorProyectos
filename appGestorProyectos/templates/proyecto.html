@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/proyecto.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Detalles del proyecto</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <section id="principal">
+        <article id="tarjeta_alta">
+            <div id="tarjeta_up">
+                <h3 id="titulo_tarjeta">CRProjects</h3>
+                <a href="{% url 'proyecto_update' proyecto.id %}"><img id="editar" src="{% static 'img/edit.PNG' %}" alt="editar"></a>
+            </div>
+            <div id="tarjeta_down">
+                <div id="tarjeta_down_titulo">
+                    <img src="{% static 'img/logo.png' %}" alt="empresa">
+                    <h3>{{ proyecto.nombre }}</h3>
+                </div>
+                <div id="izquierda">
+                    <h4>Tareas:</h4>
+                    <ul id="participantes">
+                        {% for tarea in object.tarea.all %}
+                        <li><a class="subrayado"  href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <p class="presupuesto">Presupuesto: {{ proyecto.presupuesto }}€</p>
+                </div>
+                <div id="derecha">
+                    <div id="derecha_nombre">
+                        <p id="derecha_p1">Responsable del proyecto: {{ proyecto.responsable }}</p>
+                        <p id="derecha_p2">Cliente: <a class="subrayado" href="{% url 'cliente' proyecto.id %}">{{ proyecto.nombre_cliente }}</a></p>
+                    </div>
+                    <div id="derecha_fechas">
+                        <p class="fechas">Fecha de inicio: {{ proyecto.fecha_inicio }}</p>
+                        <p class="fechas">Fecha de cierre: {{ proyecto.fecha_fin }}</p>
+                    </div>
+                    <div id="derecha_descripcion">
+                        <h4>Descripción:</h4>
+                        <p>{{ proyecto.descripcion }}</p>
+                    </div>
+                </div>
+                <div id="next">
+                    <a class="btn btn-danger" href="{% url 'proyecto_delete' proyecto.id %}">Eliminar proyecto</a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <div id="boton_atras">
+        <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+    </div>
+</main>
+{% endblock %}

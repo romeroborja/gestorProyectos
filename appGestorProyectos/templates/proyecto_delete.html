@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock %}
+
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Eliminar proyecto</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <section id="pfbody">
+        <form method="post" class="register" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br>
+            <fieldset class="row1">
+                <legend>¿Está seguro de que deasea eliminar el proyecto "{{ proyecto.nombre }}"?</legend>
+            </fieldset>
+            <div class="col-sm-2 col-sm-8">
+                <a class="btn btn-dark" href="javascript: history.go(-1)">Cancelar</a>
+                <input class="btn btn-danger" type="submit" value="Eliminar">
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}

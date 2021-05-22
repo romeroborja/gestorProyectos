@@ -1,0 +1,87 @@
+.main>div {
+    display: block;
+    width: 600px;
+    margin: auto;
+    height: auto;
+}
+
+.two .info {
+    border: none;
+    margin: 5% auto;
+}
+
+.info {
+    width: 500px;
+    padding: 10px;
+    border: 7px solid #72B372;
+    border-radius: 10px;
+    font-family:'Roboto', sans-serif;
+    color: #444;
+    background-color: #F0F0F0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+.info h3 {
+    margin: 0 15px 20px;
+    border-bottom: 2px solid #b8860b;
+    padding: 5px 10px 5px 0;
+    font-size: 1.5em;
+}
+
+.info div {
+    margin: 0 0 15px 0;
+    border: none;
+}
+
+.info label {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    margin: 10px;
+}
+
+.important {
+}
+
+.text {
+    width: 65%;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    text-align: center;
+    margin: 8px auto 8px auto;
+    border-bottom: 1px solid #AAA;
+}
+
+
+#boton_atras{
+background-color: #dcdcdc;
+padding-bottom: 20px;
+}
+
+#boton_atras a{
+margin-left: 40px;
+}
+
+.doble{
+    display: flex;
+}
+
+.doble2 {
+    display: block;
+    height: 24px;
+}
+
+#btnizq {
+    float: left;
+}
+
+#btnder {
+    float: right;
+}
+
+hr {
+   border: 3px solid #666; border-radius: 300px/10px; height: 0px; text-align: center;
+}

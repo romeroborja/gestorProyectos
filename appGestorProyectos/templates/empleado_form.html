@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/empleado_form.css' %}">
+{% endblock %}
+
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Nuevo empleado</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <section id="pfbody">
+        <form method="post" class="register" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="row1">
+                <legend>Detalles del empleado</legend>
+                <p class="pfp">
+                    <label>DNI</label>
+                    {{ form.dni }}
+                </p>
+                <p class="pfp">
+                    <label>Nombre</label>
+                    {{ form.nombre }}
+                </p>
+                <p class="pfp">
+                    <label>Apellidos</label>
+                    {{ form.apellidos }}
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Datos de contacto</legend>
+                <p class="pfp">
+                    <label>Email</label>
+                    {{ form.email }}
+                </p>
+                <p class="pfp">
+                    <label>Teléfono</label>
+                    {{ form.telefono }}
+                </p>
+            </fieldset>
+            <fieldset class="row3">
+                <legend>Foto de perfil</legend>
+                <p class="pfp">
+                    <label>Imagen</label>
+                    {{ form.imagen }}
+                </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </fieldset>
+            <div>
+                <input class="button" type="submit" name="submit" value="Nuevo empleado">
+            </div>
+        </form>
+    </section>
+    <div id="boton_atras">
+        <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+    </div>
+</main>
+{% endblock %}

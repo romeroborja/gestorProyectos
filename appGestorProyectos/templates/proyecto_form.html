@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/proyecto_form.css' %}">
+{% endblock %}
+
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Nuevo proyecto</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <section id="pfbody">
+        <form method="post" class="register">
+            {% csrf_token %}
+            <fieldset class="row1">
+                <legend>Detalles del proyecto</legend>
+                <p class="pfp">
+                    <label>Nombre</label>
+                    {{ form.nombre }}
+                </p>
+                <p class="pfp">
+                    <label>Descripción
+                    </label>
+                    {{ form.descripcion }}
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Cliente</legend>
+                <p class="pfp">
+                    <label>Nombre</label>
+                    {{ form.nombre_cliente }}
+                </p>
+                <p class="pfp">
+                    <label>Apellidos</label>
+                    {{ form.apellidos_cliente }}
+                </p>
+                <p class="pfp">
+                    <label>Email</label>
+                    {{ form.email_cliente }}
+                </p>
+                <p class="pfp">
+                    <label>Teléfono</label>
+                    {{ form.telefono_cliente }}
+                </p>
+            </fieldset>
+            <fieldset class="row3">
+                <legend>Más información</legend>
+                <p class="pfp">
+                    <label>Fecha inicio</label>
+                    {{ form.fecha_inicio }}
+                </p>
+                <p class="pfp">
+                    <label>Fecha final</label>
+                    {{ form.fecha_fin }}
+                </p>
+                <p class="pfp">
+                    <label>Presupuesto</label>
+                    {{ form.presupuesto }}
+                </p>
+                <p class="pfp">
+                    <label>Asignar tareas</label>
+                    {{ form.tarea }}
+                </p>
+                 <p class="pfp">
+                    <label>Responsable</label>
+                    {{ form.responsable }}
+                </p>
+            </fieldset>
+            <div>
+                <input class="button" type="submit" name="submit" value="Nuevo proyecto">
+            </div>
+        </form>
+    </section>
+    <div id="boton_atras">
+        <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+    </div>
+</main>
+{% endblock %}

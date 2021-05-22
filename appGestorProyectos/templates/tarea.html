@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/tarea.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Detalles de la tarea</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <div class="main two">
+        <div class="info">
+            <h3>Tarea: {{ tarea.nombre }}</h3>
+            <div id="reg-form1">
+                <div class="doble important">
+                    <p class="text">Responsable: {{ tarea.responsable }}</p>
+                    <p class="text">Proridad: {{ tarea.nivel_prioridad }}</p>
+                </div>
+                <div class="doble important">
+                    <p class="text">Fecha inicio: {{ tarea.fecha_inicio}}</p>
+                    <p class="text">Fecha fin: {{ tarea.fecha_fin }}</p>
+                </div>
+                <hr>
+                <div>
+                    <p class="text">Estado de la tarea: {{ tarea.estado_tarea }}</p>
+                </div>
+                <div>
+                    <p class="text">Descripción: {{ tarea.descripcion }}</p>
+                </div>
+                <div>
+                    <p class="text">Notas: {{ tarea.notas }}</p>
+                </div>
+            </div>
+            <div class="doble2">
+                <div id="btnizq">
+                    <a class="btn btn-danger" href="{% url 'tarea_delete' tarea.id %}">Eliminar tarea</a>
+                </div>
+                <div id="btnder">
+                    <a class="btn btn-warning" href="{% url 'tarea_update' tarea.id %}">Modificar tarea</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="boton_atras">
+        <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+    </div>
+</main>
+{% endblock %}

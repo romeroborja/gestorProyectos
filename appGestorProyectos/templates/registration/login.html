@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">INICIO DE SESIÓN</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <div class="login_sect">
+        <div class="login">
+            <form method="POST">
+            {% csrf_token %}
+                <p class="label_login">Nombre de usuario: </p>
+                {{ form.username }}
+                <p class="label_login">Contraseña: </p>
+                {{ form.password }}
+            <input class="btn btn-primary" type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+

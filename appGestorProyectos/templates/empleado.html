@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/empleado.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Detalles del empleado</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <section id="ebody">
+        <div id="login-box">
+            <div class="left">
+                <div id="empedit">
+                    <h1 id="eh1">{{ empleado.nombre }}</h1>
+                    <a href="{% url 'empleado_update' empleado.id %}"><img id="editar" src="{% static 'img/edit.PNG' %}" alt="editar"></a>
+                </div>
+                <p class="text">Apellidos: {{ empleado.apellidos }}</p>
+                <p class="text">DNI: {{ empleado.dni }}</p>
+                <p class="text">Email: {{ empleado.email }}</p>
+                <p class="text">Teléfono: {{ empleado.telefono }}</p>
+            </div>
+
+            <div class="right">
+                {% if empleado.imagen %}
+                    <img src="{{ empleado.imagen.url }}" width="140">
+                 {% else %}
+                    <img src="{% static 'img/SinFotoPerfil.jpg' %}" width="240">
+                {% endif %}
+                <div id="next">
+                    <a class="btn btn-danger posbot" href="{% url 'empleado_delete' empleado.id %}">Eliminar empleado</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="boton_atras">
+        <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+    </div>
+</main>
+{% endblock %}

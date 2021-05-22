@@ -1,0 +1,84 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tarea_form.css' %}">
+{% endblock %}
+
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Nueva tarea</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <section id="pfbody">
+        <form id="myform" method="post" class="register">
+            {% csrf_token %}
+            <fieldset class="row1">
+                <legend>Detalles de la tarea</legend>
+                <p class="pfp">
+                    <label>Nombre</label>
+                    {{ form.nombre }}
+                </p>
+                <p class="pfp">
+                    <label>Descripción
+                    </label>
+                    {{ form.descripcion }}
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Tarea</legend>
+                <p class="pfp">
+                    <label>Responsable</label>
+                    {{ form.responsable }}
+                </p>
+                <p class="pfp">
+                    <label>Nivel de prioridad</label>
+                    <br>
+                    {{ form.nivel_prioridad }}
+                </p>
+                <p class="pfp">
+                    <label>Estado de la tarea</label>
+                    <br>
+                    {{ form.estado_tarea }}
+                </p>
+            </fieldset>
+            <fieldset class="row3">
+                <legend>Más información</legend>
+                <p class="pfp">
+                    <label>Fecha inicio</label>
+                    {{ form.fecha_inicio }}
+                </p>
+                <p class="pfp">
+                    <label>Fecha final</label>
+                    {{ form.fecha_fin }}
+                </p>
+                <p class="pfp">
+                    <label>Notas</label>
+                    {{ form.notas }}
+                </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </fieldset>
+            <div>
+                <input class="button" id="btn_enviar" type="submit" name="submit" value="Nueva tarea">
+            </div>
+        </form>
+        <div id="exito">
+        </div>
+    </section>
+    <div id="boton_atras">
+        <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+    </div>
+</main>
+<script src="{% static 'js/tarea_form.js' %}"></script>
+{% endblock %}

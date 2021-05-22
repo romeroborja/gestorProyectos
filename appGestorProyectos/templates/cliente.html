@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/cliente.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Detalles del cliente</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <section id="ebody">
+        <div id="login-box">
+            <div class="left">
+                <div id="empedit">
+                    <h1 id="eh1">Cliente</h1>
+                    <img src="{% static 'img/persona.png' %}">
+                </div>
+                <p class="text">Nombre: {{ proyecto.nombre_cliente }}</p>
+                <p class="text">Apellidos: {{ proyecto.apellidos_cliente }}</p>
+                <p class="text">Email: {{ proyecto.email_cliente }}</p>
+                <p class="text">Teléfono: {{ proyecto.telefono_cliente }}</p>
+            </div>
+        </div>
+    </section>
+    <div id="boton_atras">
+        <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+    </div>
+</main>
+{% endblock %}

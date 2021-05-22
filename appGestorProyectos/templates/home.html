@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <img class="masthead-avatar mb-5" src="{% static 'img/logo_azul.png' %}" alt="" />
+            <p class="masthead-subheading font-weight-light mb-0">Gestiona tus proyectos, gestiona tu vida.</p>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <div class="container2">
+        <div class="row">
+            <!-- Footer Location-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Proyectos</h4>
+                <a href="{% url 'proyecto_list' %}"><img width="240" src="https://www.marineinstruments.es/wp-content/uploads/2017/11/proyectos-a-medida.png"> </a>
+            </div>
+            <!-- Footer Social Icons-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Tareas</h4>
+                <a href="{% url 'tareas_list' %}"><img width="240" src="https://www.webquestcreator2.com/majwq/files/files_user/40087/identifica-01.png"></a>
+            </div>
+            <!-- Footer About Text-->
+            <div class="col-lg-4">
+                <h4 class="text-uppercase mb-4">Empleados</h4>
+                <a href="{% url 'empleado_list' %}"><img width="240" src="https://pngimage.net/wp-content/uploads/2018/05/empleados-png-2.png"></a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

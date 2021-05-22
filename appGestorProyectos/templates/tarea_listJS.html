@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/list.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Lista de tareas</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <div id="botnnew">
+        <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning bti" href="{% url 'tarea_form' %}">Nueva tarea</a>
+        <select id="select">
+            <option value="" selected disabled>Estado de la tarea</option>
+            <option value="Asignada">Asiganda</option>
+            <option value="En proceso"> En proceso</option>
+            <option value="Abierta">Abierta</option>
+            <option value="Finalizada">Finalizada</option>
+        </select>
+    </div>
+    <div class="table-users">
+        <div class="header">Tareas</div>
+        <table cellspacing="0" id="tabla">
+        </table>
+    </div>
+</main>
+<script src="{% static 'js/tareas.js' %}"></script>
+{% endblock %}
